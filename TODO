@@ -1,0 +1,3 @@
+Copy .html templates from src/ to app/
+Reorganize assets: either copy .css, .json, .jpg from src/ to app/ or put into seperate folder
+Add test component to test various angular typings

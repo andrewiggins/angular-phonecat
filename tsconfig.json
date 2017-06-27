@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "es5"
+    ],                                     /* Specify library files to be included in the compilation:  */
+    "outDir": "app",                    /* Redirect output structure to the directory. */
+    "sourceMap": true,                     /* Generates corresponding '.map' file. */
+    "strict": true,                        /* Enable all strict type-checking options. */
+    "target": "es5",                       /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
+    "types": [
+      "angular",
+      "angular-animate",
+      "angular-mocks",
+      "angular-resource",
+      "angular-route",
+      "jasmine",
+      "jquery"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules/**"
+  ]
+}

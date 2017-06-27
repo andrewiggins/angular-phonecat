@@ -1,24 +1,24 @@
-'use strict';
+// tslint:disable:variable-name
 
-describe('Phone', function() {
-  var $httpBackend;
-  var Phone;
-  var phonesData = [
+describe('Phone', () => {
+  let $httpBackend: ng.IHttpBackendService;
+  let Phone: PhoneResource;
+  const phonesData: any = [
     {name: 'Phone X'},
     {name: 'Phone Y'},
     {name: 'Phone Z'}
   ];
 
   // Add a custom equality tester before each test
-  beforeEach(function() {
+  beforeEach(() => {
     jasmine.addCustomEqualityTester(angular.equals);
   });
 
   // Load the module that contains the `Phone` service before each test
-  beforeEach(module('core.phone'));
+  beforeEach(angular.mock.module('core.phone'));
 
   // Instantiate the service and "train" `$httpBackend` before each test
-  beforeEach(inject(function(_$httpBackend_, _Phone_) {
+  beforeEach(inject((_$httpBackend_: ng.IHttpBackendService, _Phone_: PhoneResource) => {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('app/phones/phones.json').respond(phonesData);
 
@@ -26,13 +26,13 @@ describe('Phone', function() {
   }));
 
   // Verify that there are no outstanding expectations or requests after each test
-  afterEach(function () {
+  afterEach(() => {
     $httpBackend.verifyNoOutstandingExpectation();
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should fetch the phones data from `app/phones/phones.json`', function() {
-    var phones = Phone.query();
+  it('should fetch the phones data from `app/phones/phones.json`', () => {
+    const phones = Phone.query();
 
     expect(phones).toEqual([]);
 
